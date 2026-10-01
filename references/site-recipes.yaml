@@ -1,0 +1,43 @@
+version: 1
+updated: "2026-10-01"
+
+# 这是经过筛选的操作经验库，不是普通书签列表。
+# 只有真实用户任务成功后，才能新增 working 配方；仅通过网络预检还不够。
+# 记录中不得包含用户内容和凭据。
+#
+# status 可选值：
+#   working    - 在 last_verified 日期真实成功完成过任务
+#   unverified - 暂时保留，但需要再次通过真实任务验证
+#   broken     - 已无法完成记录中的流程
+#   unsafe     - 因安全、隐私或误导性设计而被淘汰
+#
+# 示例记录（保持注释状态，直到有真实验证过的站点可替换它）：
+# - id: example-pdf-compressor
+#   intents: [compress-pdf]
+#   site_name: "示例站点"
+#   entry_url: "https://example.com/compress"
+#   last_verified: "2026-10-01"
+#   status: "working"
+#   input:
+#     method: "file-upload"
+#     formats: [pdf]
+#     max_size_mb: 20
+#   operation:
+#     controls:
+#       - "选择源文件"
+#       - "选择标准压缩"
+#       - "开始压缩"
+#     completion_signal: "下载按钮变为可用"
+#   output:
+#     formats: [pdf]
+#     download_method: "点击主要下载按钮"
+#     location_behavior: "浏览器默认下载目录"
+#   limits:
+#     login_required: false
+#     payment_required: false
+#     known: []
+#   privacy_note: "源文件会上传至第三方服务"
+#   failure_signals: [captcha, login-wall, payment-wall, timeout]
+#   notes: "只保留复现流程所需的信息"
+
+sites: []
